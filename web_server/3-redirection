@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Installs nginx, serves Holberton School and adds a 301 redirect on /redirect_me
+sudo apt-get update
+sudo apt-get install -y nginx
+echo "Holberton School for the win!" | sudo tee /var/www/html/index.html > /dev/null
+if ! grep -q "redirect_me" /etc/nginx/sites-available/default
+then
+  sudo sed -i '/server_name _;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+fi
+sudo service nginx restart
