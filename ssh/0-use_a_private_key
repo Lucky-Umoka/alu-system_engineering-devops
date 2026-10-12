@@ -1,2 +1,2 @@
 #!/bin/bash
-ssh -i ~/.ssh/school ubuntu@<YOUR_SERVER_IP>
+ssh -i ~/.ssh/school ubuntu@1.2.3.4
