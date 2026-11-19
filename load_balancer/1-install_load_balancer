@@ -4,7 +4,7 @@ sudo apt-get update
 sudo apt-get install -y haproxy
 if ! grep -q "http_front" /etc/haproxy/haproxy.cfg
 then
-  sudo tee -a /etc/haproxy/haproxy.cfg > /dev/null << "CONF'
+  sudo tee -a /etc/haproxy/haproxy.cfg > /dev/null << 'CONF'
 
 frontend http_front
     bind *:80
